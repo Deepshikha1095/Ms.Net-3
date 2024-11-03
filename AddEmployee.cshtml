@@ -1,0 +1,20 @@
+﻿@model DalLib.Employee
+@{
+    ViewBag.Title = "AddEmployee";
+}
+
+<h2>AddEmployee</h2>
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm())
+{
+    <p>Enter ID : @Html.TextBoxFor(emp => emp.Id, new { @Required = "required" })</p>
+    @Html.ValidationMessageFor(emp => emp.Id)
+    <p>Enter Name : @Html.TextBoxFor(emp => emp.Name, new { @Required = "required" })</p>
+    @Html.ValidationMessageFor(emp => emp.Name)
+    <p>Enter Dept : @Html.TextBoxFor(emp => emp.Dept, new { @Required = "required" })</p>
+    @Html.ValidationMessageFor(emp => emp.Dept)
+    <input type="submit" value="Add Employee" />
+
+}
+

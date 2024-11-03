@@ -1,0 +1,21 @@
+﻿@model DalLib.Employee 
+@{
+    ViewBag.Title = "EditEmplyoee";
+}
+
+<h2>Edit Emplyoee</h2>
+
+@Html.ValidationSummary(true)
+
+@using (Html.BeginForm())
+{
+    <p> ID : @Html.DisplayFor(emp => emp.Id) @Html.HiddenFor(e => e.Id)</p>
+
+    <p>Enter Name : @Html.TextBoxFor(emp => emp.Name, new { @Required = "required" })</p>
+    @Html.ValidationMessageFor(emp => emp.Name)
+    <p>Enter Dept : @Html.TextBoxFor(emp => emp.Dept, new { @Required = "required" })</p>
+    @Html.ValidationMessageFor(emp => emp.Dept)
+    <input type="submit" value="Edit Employee" />
+
+}
+
